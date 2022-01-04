@@ -1,0 +1,63 @@
+
+@mixin flex($var1) {
+    display: flex;
+    align-items: center;
+    flex-direction: $var1;
+}
+
+.header{
+    height:70px;
+    background-color: rgb(22, 9, 46);
+    color:whitesmoke;
+    @include flex(row);
+    justify-content: space-between;
+    position: sticky;
+    top:0px;
+    z-index: 999;
+    .header_logo{
+        @include flex(row);
+        margin: 10px;
+        margin-left: 20px;
+        flex:0.4;
+        img{
+            object-fit: contain;
+            height:40px;
+            cursor: pointer;
+            border-radius:20px;
+        }
+        h2{
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+    .header_menu{
+        margin-right: 20px;
+        @include flex(row);
+        text-decoration: none;
+        h3{
+            padding:10px;
+            font-weight: 500;
+            margin: 10px;
+            padding: 8px;
+            border-radius:20px;
+            cursor: pointer;
+            &:hover{
+                background-color:rgb(77, 223, 223);
+                color:rgb(41, 39, 43) !important;
+                font-weight: bold;
+                transform: scale(1.05);
+            }
+            @media screen and (max-width: 650px) {
+                &{
+                    font-size: 2.1vmax;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 650px){
+        &{
+            height:100px;
+        }
+    }
+}

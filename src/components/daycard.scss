@@ -1,0 +1,54 @@
+@mixin  flex($var1) {
+    display: flex;
+    flex-direction: $var1;
+    align-items:center;
+}
+.daycard_body{
+    margin:20px;
+    border-radius:15px;
+    width:550px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flex(column);
+    padding:15px;
+}
+.daycard{
+    color: whitesmoke;
+    @include flex(column);
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size:contain;
+    width:65%;
+    margin:10px;
+    padding:15px;
+    height: 450px;
+    // background-color:whitesmoke;
+    backdrop-filter: blur(15px) brightness(40%);
+    border-radius:15px;
+    .daycard_top{
+        @include flex(row);
+    }
+    h3{
+        padding: 10px;
+    }
+    .daycard_info{
+        backdrop-filter: grayscale(10%);
+        @include  flex(column);
+        align-items:baseline;
+        margin-top:10px;
+        span{
+            margin:10px;font-size: medium;
+        }
+        img{
+            width:200px;
+            height:200px;
+        }
+        
+    }
+    @media screen and (max-width:600px) {
+        &{
+            width:75%;
+        }
+    }
+}

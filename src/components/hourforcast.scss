@@ -1,0 +1,47 @@
+@mixin  flex($var) {
+    display: flex;
+    align-items: center;
+    flex-direction: $var;
+}
+
+.hourforcast{
+    background-color: whitesmoke;
+    padding: 10px;
+    @include  flex(column);
+    .input__{
+        width: 100%;
+        @include  flex(column);
+        margin:15px 0px;
+        input{
+            width:20%;
+            min-width: 200px;
+            padding:10px 20px;
+            border-radius: 15px;
+            font-size: medium;
+            font-weight: bold
+        }
+    }
+    .hourforcast_body{
+        @include flex(column);
+        width: 100%;
+        margin:20px;
+        h1{
+            text-transform: uppercase;
+        }
+        .hourforcast_body_info{
+            margin:10px;
+            width: 70%;
+            height:75vh;
+            background-color:whitesmoke;
+            border-radius: 15px;
+            padding: 10px;
+            @include flex(column);
+
+            @media screen and (max-width:900px) {
+                &{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
